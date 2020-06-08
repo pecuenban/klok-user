@@ -31,4 +31,9 @@ export class ConexionesService {
    autenticarUser(user){
     return this.http.post('https://us-central1-klok-reservas.cloudfunctions.net/api/autenticar/user',user, this.httpOptions);
   }
+
+  getHoras(finca,id){
+    return this.http.get('https://us-central1-klok-reservas.cloudfunctions.net/api/horas/'+finca+"/"+id, this.httpOptions);
+  }
+  
 }

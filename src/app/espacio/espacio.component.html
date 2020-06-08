@@ -1,16 +1,8 @@
-<div class="cuerpo"><span [routerLink]="['/espacios']" class="atras"><i class="material-icons">keyboard_backspace</i></span><span class="titulo">
-  <ng-container *ngIf="editar">Editar</ng-container>
-  <ng-container *ngIf="!editar">Nuevo</ng-container> espacio</span>
-<div class="tarjeta">
-<form [formGroup]="formularioSala" (ngSubmit)="onSubmit()">
-<span><b>Nombre:</b> <input formControlName="Nombre" [(ngModel)]="sala.Nombre"></span>
-<span><b>Aforo máximo:</b> <input formControlName="Capacidad" type="number" [(ngModel)]="sala.Capacidad" min="1"></span>
-<span><b>Tiempo de reserva:</b> <input formControlName="Tiempo" type="number" [(ngModel)]="sala.Tiempo" step="0.5" min="0.5">h</span>
-<span><b>Horario de apertura:</b></span>
-<div>Mañanas: De <input formControlName="HoraIni" [(ngModel)]="sala.HoraIni" type="time"> a <input formControlName="HoraFin" [(ngModel)]="sala.HoraFin" type="time"></div>
-<div>Tardes: De <input formControlName="HoraIni2" [(ngModel)]="sala.HoraIni2" type="time"> a <input formControlName="HoraFin2" [(ngModel)]="sala.HoraFin2" type="time"></div>
-
-<button><i class="material-icons">sd_card</i> Guardar</button>
-</form>
+<div class="cuerpo"><span [routerLink]="['/inicio']" class="atras"><i class="material-icons">keyboard_backspace</i></span>
+<div class="tarjeta"><h2>Horario {{sala.Nombre}}</h2>
+<ul>
+<li *ngFor="let hora of sala.Horas"><i class="material-icons">access_time</i> <span>{{hora}}</span><a>Reservar</a></li>
+</ul>
 </div>
+<div class="add_espacio" [routerLink]="['/new_espacio']"><span>Reservar ahora</span></div>
 </div>

@@ -9,16 +9,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
   styleUrls: ['./espacio.component.css']
 })
 export class EspacioComponent implements OnInit {
-sala = {
-  "Nombre":"",
-"Capacidad":"",
-"Tiempo":0,
-"HoraIni":"",
-"HoraFin":"",
-"HoraIni2":"",
-"HoraFin2":"",
-"id":""
-};
+sala :any;
 formularioSala = new FormGroup({
   Nombre : new FormControl('',Validators.required),
   Capacidad : new FormControl('',Validators.required),
@@ -29,7 +20,6 @@ formularioSala = new FormGroup({
   HoraFin2 : new FormControl(''),
 });
 editar = false;
-finca;
 idEditar;
   constructor(protected conexionesService: ConexionesService,
     private router: Router,
@@ -41,14 +31,10 @@ idEditar;
         
             if (params.get("id") != null) {
 this.editar = true;
- this.conexionesService.getFinca(localStorage.getItem("Finca"))
+ this.conexionesService.getHoras(localStorage.getItem("Finca"), params.get("id"))
     .subscribe(
       (data) => { // Success
-        this.finca = data;
-        this.idEditar = params.get("id");
-        this.sala = this.finca.Salas[params.get("id")];
-        this.sala.Tiempo = this.sala.Tiempo/2;
-        this.sala.id = params.get("id");
+        this.sala = data;
       },
       (error) => {
         console.error(error);

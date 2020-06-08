@@ -7,18 +7,22 @@
 }
 .tarjeta {
     position: absolute;
-    bottom: 0;
+    bottom: 50px;
     left: 0;
     right: 0;
-    top: 130px;
+    top: 70px;
     background: white;
-    border-radius: 20px 20px 0px 0px;
     padding: 15px;
 }
+.tarjeta a {
+    position: absolute;
+    right: 0;
+    color: var(--color);
+    font-weight: 500;
+}
 .tarjeta span {
-    display: block;
-    line-height: 40pt;
-    border-bottom: solid 1px;
+    margin-left: 15px;
+    font-weight: 500;
 }
 .tarjeta span:nth-child(4) {
     border-bottom: none;
@@ -44,13 +48,6 @@ button{
 }
 .tarjeta div {
     line-height: 45pt;
-}
-.titulo{
-  position: absolute;
-  top: 20px;
-  right: 15px;
-  color: white;
-  font-size: 17pt;
 }
 .atras {
   position: absolute;
@@ -79,4 +76,59 @@ input {
 }
 input[type="time"] {
     width: 80px;
+}
+li {
+    list-style: none;
+    font-size: 12pt;
+    border-bottom: solid 2px #ddd;
+    line-height: 40px;
+    position: relative;
+}
+ul {
+    padding: 0;
+    position: absolute;
+    left: 15px;
+    right: 14px;
+    top: 70px;
+    bottom: 30px;
+    overflow: auto;
+}
+.tarjeta li > * {
+    vertical-align: middle;
+}
+.tarjeta li > i.material-icons {
+    color: #ccc;
+    font-size: 16pt;
+}
+
+.add_espacio:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    background: var(--color);
+    z-index: 0;
+}
+.add_espacio {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  right: -10px;
+  background: var(--color);
+  color: white;
+  font-size: 15pt;
+  text-align: center;
+  padding: 25px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0px -2px 3px #555;
+}
+.add_espacio span{
+  position: relative;
+  color: white;
+  font-weight: 500;
+
 }
