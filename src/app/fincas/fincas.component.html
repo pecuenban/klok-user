@@ -1,11 +1,17 @@
 <div class="cuerpo">
   <div class="cabecera">¡Bienvenido a <b>Klok</b>!</div><div class="contenedor">
     
-    <p class="info">Panel de control del administrador</p>
+    <p class="info">Empieza eligiendo dónde quieres reservar</p>
     <div class="centrado">
-      <div class="boton" [routerLink]="['/espacios']">Gestionar espacios</div>
-      <div class="boton" [routerLink]="['/contacto']">Atención al cliente</div>
+
+  <ng-container *ngFor="let sala of finca.Salas; let i = index">
+<div *ngIf="sala.Activa" [routerLink]="['/reservar_espacio/'+i]">
+  <label class="nombre">{{sala.Nombre}}</label>
+  <span class="icono"></span>
+</div>
+  </ng-container>
     </div>
 </div>
-<div class="add_espacio" [routerLink]="['/new_espacio']"><span>Añadir nuevo espacio</span></div>
+    <div class="scan"><i class="material-icons">camera_alt</i>Scan <b>entradas-salidas</b></div>
+<div class="add_espacio" [routerLink]="['/new_espacio']"><span><i class="material-icons">history</i> Mis reservas</span></div>
 </div>

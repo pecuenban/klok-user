@@ -8,12 +8,22 @@ import { ConexionesService } from '../conexiones.service';
 })
 export class FincasComponent implements OnInit {
 
-  finca:any;
+  finca;
   
   constructor(protected conexionesService: ConexionesService) { }
 
  
     ngOnInit() {
+      this.conexionesService.getFinca(localStorage.getItem("Finca"))
+    .subscribe(
+      (data) => { // Success
+        this.finca = data;
+        console.log(data)
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   
   }
   cambioEstado(elemento) {

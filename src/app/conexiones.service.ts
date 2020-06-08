@@ -28,7 +28,7 @@ export class ConexionesService {
    postSala(id,sala){
     return this.http.post('https://us-central1-klok-reservas.cloudfunctions.net/api/sala/'+id,sala, this.httpOptions);
   }
-   autenticarAdmin(user){
-    return this.http.post('https://us-central1-klok-reservas.cloudfunctions.net/api/autenticar/admin',user, this.httpOptions);
+   autenticarUser(user){
+    return this.http.post('https://us-central1-klok-reservas.cloudfunctions.net/api/autenticar/user',user, this.httpOptions);
   }
 }

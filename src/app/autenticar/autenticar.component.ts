@@ -12,11 +12,11 @@ export class AutenticarComponent implements OnInit {
 
   constructor(protected conexionesService: ConexionesService,private router: Router) { }
 autenticar ={
-  "Nombre":"",
+  "Puerta":"",
   "Pass":""
 };
 formularioRegistro = new FormGroup({
-  Nombre : new FormControl('',Validators.required),
+  Puerta : new FormControl('',Validators.required),
   Pass : new FormControl('',Validators.required),
 });
   ngOnInit() {
@@ -24,7 +24,7 @@ formularioRegistro = new FormGroup({
   }
 
  onSubmit(){
-   this.conexionesService.autenticarAdmin(this.autenticar).subscribe({
+   this.conexionesService.autenticarUser(this.autenticar).subscribe({
     next: data => this.respuesta(data),//this.estado = data.status,
     error: error => this.error(error)//this.estado = error
   });

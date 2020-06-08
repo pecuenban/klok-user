@@ -40,6 +40,7 @@ b{
 .add_espacio span{
   position: relative;
   color: var(--color);
+  font-weight: 500;
 
 }
 .centrado {
@@ -48,33 +49,101 @@ b{
     bottom: 0;
     left: 0;
     right: 0;
-    width: calc(100% - 30px);
+    width: 260px;
     margin: auto;
-    height: 150px;
+    height: 250px;
 }
 p.info {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 80px;
     left: 15px;
     right: 15px;
-    height: 20px;
     margin: auto;
-    padding-bottom: 175px;
     text-align: center;
+    font-size: 14pt;
+    width: 220px;
+    color: black;
 }
-.boton {
-    height: 50px;
-    font-size: 15pt;
+span i.material-icons {
+    color: var(--color);
+    transform: scaleX(-1) rotate(-295deg);
+    font-size: 19pt;
+    vertical-align: sub;
+}
+.centrado > div {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    padding: 15px;
+}
+label.nombre {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    color: var(--color);
     font-weight: 600;
-    color: white;
-    border: solid 1px;
-    border-radius: 5px;
-    margin-top: 15px;
-    text-align: center;
-    line-height: 50px;
+    font-size: 9pt;
 }
-.centrado p {
-    margin-bottom: 30px;
+span.icono {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    right: 25px;
+    bottom: 35px;
+    background: var(--color);
+}
+
+.centrado > *:nth-child(4n+1) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+}
+.centrado > *:nth-child(4n) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+}
+.centrado > *:nth-child(4n+2){
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: auto;
+    bottom: 0;
+}
+.centrado > *:nth-child(4n+3) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: auto;
+    bottom: 0;
+}
+
+.scan b {
+    font-weight: 400;
+}
+
+.scan i {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+.scan {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    color: white;
+    font-weight: 100;
+    width: 170px;
+    margin: auto;
     text-align: center;
+    font-size: 11pt;
 }

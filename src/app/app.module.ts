@@ -23,8 +23,7 @@ import { ContactoComponent } from './contacto/contacto.component';
       { path: '', component: AutenticarComponent },
       { path: 'inicio', component: FincasComponent },
       { path: 'espacios', component: EspaciosComponent },
-      { path: 'new_espacio', component: EspacioComponent },
-      { path: 'edit_espacio/:id', component: EspacioComponent },
+      { path: 'reservar_espacio/:id', component: EspacioComponent },
       { path: 'contacto', component: ContactoComponent },
       
     ])],

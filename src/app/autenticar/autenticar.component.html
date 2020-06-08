@@ -6,10 +6,10 @@
   <h3>Iniciar sesión</h3>
 <form [formGroup]="formularioRegistro" (ngSubmit)="onSubmit()">
   <input 
-[(ngModel)]="autenticar.Nombre"
-[class.is-invalid]="formularioRegistro.get('Nombre').touched && formularioRegistro.get('Nombre').invalid"
-formControlName="Nombre"
-placeholder="Código de registro" type="text" name="Nombre">
+[(ngModel)]="autenticar.Puerta"
+[class.is-invalid]="formularioRegistro.get('Puerta').touched && formularioRegistro.get('Puerta').invalid"
+formControlName="Puerta"
+placeholder="Código de registro" type="text" name="Puerta">
   <input 
 [(ngModel)]="autenticar.Pass"
 [class.is-invalid]="formularioRegistro.get('Pass').touched && formularioRegistro.get('Pass').invalid"
