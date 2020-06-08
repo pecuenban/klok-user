@@ -1,0 +1,27 @@
+button.add {
+    position: absolute;
+    top: -4px;
+    right: 0px;
+}
+ul {
+    padding: 0;
+}
+li:last-child {
+    border: none;
+}
+li {
+    list-style: none;
+    padding: 15px 0px;
+    border-bottom: solid 1px #cccccc;
+}
+li > *{
+  vertical-align: middle;
+}
+.contenedor {
+    position: relative;
+    margin: 15px;
+}
+h1 {
+    font-size: 18pt;
+    margin-top: 25px;
+}

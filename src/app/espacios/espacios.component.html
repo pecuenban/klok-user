@@ -1,0 +1,20 @@
+<app-cabecera></app-cabecera><div class="contenedor">
+  <h1>Mis espacios</h1>
+  <button class="add" [routerLink]="['/new_espacio']">+</button>
+<ul>
+<li *ngFor="let sala of finca.Salas; let i = index" [class.inactivo]="!sala.Activa">
+  <label class="switch">
+            
+  <input *ngIf="sala.Activa" [attr.id]="i" checked type="checkbox" (click)="cambioEstado($event)">
+  <input *ngIf="!sala.Activa" [attr.id]="i" type="checkbox" (click)="cambioEstado($event)">
+
+  
+  <span class="slider round"></span>
+</label>
+<span class="nombre" [routerLink]="['/edit_espacio/'+i]">{{sala.Nombre}}</span>
+<div class="acciones">
+
+</div>
+</li>
+</ul>
+</div>

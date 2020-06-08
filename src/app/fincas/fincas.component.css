@@ -1,0 +1,80 @@
+.cuerpo {
+    background: var(--color);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+.cabecera {
+    margin: 15px;
+    color: white;
+}
+b{
+    color: white;
+    }
+.add_espacio:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    background: white;
+    z-index: 0;
+}
+.add_espacio {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  right: -10px;
+  background: white;
+  color: var(--color);
+  font-size: 15pt;
+  text-align: center;
+  padding: 25px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0px -2px 3px #555;
+}
+.add_espacio span{
+  position: relative;
+  color: var(--color);
+
+}
+.centrado {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: calc(100% - 30px);
+    margin: auto;
+    height: 150px;
+}
+p.info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: 20px;
+    margin: auto;
+    padding-bottom: 175px;
+    text-align: center;
+}
+.boton {
+    height: 50px;
+    font-size: 15pt;
+    font-weight: 600;
+    color: white;
+    border: solid 1px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+    line-height: 50px;
+}
+.centrado p {
+    margin-bottom: 30px;
+    text-align: center;
+}

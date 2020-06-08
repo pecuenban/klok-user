@@ -1,0 +1,85 @@
+/* Add application styles & imports to this file! */
+:root {
+    --color: #19CBB2;
+}
+*{
+  outline: none;
+  color: #4D4D4D;
+}
+body{
+  margin:0px;
+  font-family: 'Montserrat', sans-serif;
+  }
+
+/*button add*/
+button.add {
+    background: var(--color);
+    border: none;
+    padding: 0;
+    font-size: 22pt;
+    color: white;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    line-height: 38px;
+    cursor: pointer;
+}
+/*toggle*/
+label.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  vertical-align: -webkit-baseline-middle;
+  margin-right: 10px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+ position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  box-shadow: 1px 1px 1px #555555;
+}
+input:checked + .slider {
+  background-color: var(--color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

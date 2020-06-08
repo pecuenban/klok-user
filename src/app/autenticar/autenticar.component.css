@@ -1,0 +1,79 @@
+.contenedor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.cabecera {
+    text-align: center;
+    background: var(--color);
+    padding: 13px;
+    padding-bottom: 40px;
+}
+img {
+    width: 90px;
+}
+.cuerpo {
+    position: absolute;
+}
+.cuerpo {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 98px;
+}
+.cuerpo:after {
+      position: absolute;
+    top: -33px;
+    content: '';
+    background: white;
+    height: 66px;
+    border-radius: 50%;
+    box-shadow: inset 0px 1px 4px;
+    clip: rect(0px 400px 33px 0px);
+    left: -5px;
+    right: -5px;
+}
+.contenido {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 440px;
+    text-align: center;
+}
+form {
+    padding: 15px;
+}
+form input {
+    width: calc(100% - 50px);
+    border: none;
+    border-bottom: solid 1px #ccc;
+    font-size: 12pt;
+    line-height: 32pt;
+    margin-top: 5px;
+    padding-left: 50px;
+    padding-right: 0px;
+}
+button {
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    margin: auto;
+    width: 100%;
+    height: 45px;
+    border: none;
+    background: var(--color);
+    color: white;
+    border-radius: 5px;
+    font-size: 13pt;
+    font-weight: 400;
+    margin-top: 30px;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+button[disabled] {
+    opacity: 0.5;
+}

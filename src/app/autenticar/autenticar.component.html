@@ -1,0 +1,23 @@
+<div class="contenedor"><div class="cabecera">
+<img src="https://firebasestorage.googleapis.com/v0/b/klok-reservas.appspot.com/o/klok.jpg?alt=media&token=64db126c-3e10-4bce-a71e-281c211b0d9d">
+</div>
+<div class="cuerpo">
+<div class="contenido">
+  <h3>Iniciar sesión</h3>
+<form [formGroup]="formularioRegistro" (ngSubmit)="onSubmit()">
+  <input 
+[(ngModel)]="autenticar.Nombre"
+[class.is-invalid]="formularioRegistro.get('Nombre').touched && formularioRegistro.get('Nombre').invalid"
+formControlName="Nombre"
+placeholder="Código de registro" type="text" name="Nombre">
+  <input 
+[(ngModel)]="autenticar.Pass"
+[class.is-invalid]="formularioRegistro.get('Pass').touched && formularioRegistro.get('Pass').invalid"
+formControlName="Pass"
+placeholder="Contraseña" 
+type="password" name="Pass">
+<button type="submit" [disabled]="!formularioRegistro.valid">Entrar en mi cuenta</button>
+</form>
+</div>
+</div>
+</div>

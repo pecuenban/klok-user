@@ -1,0 +1,82 @@
+.cuerpo {
+    background: var(--color);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+.tarjeta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 130px;
+    background: white;
+    border-radius: 20px 20px 0px 0px;
+    padding: 15px;
+}
+.tarjeta span {
+    display: block;
+    line-height: 40pt;
+    border-bottom: solid 1px;
+}
+.tarjeta span:nth-child(4) {
+    border-bottom: none;
+}
+button i {
+    color: white;
+    font-size: 11pt!important;
+}
+button{
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    margin: auto;
+    width: calc(100% - 30px);
+    height: 50px;
+    border: none;
+    background: var(--color);
+    color: white;
+    border-radius: 5px;
+    font-size: 13pt;
+    font-weight: 500;
+}
+.tarjeta div {
+    line-height: 45pt;
+}
+.titulo{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  color: white;
+  font-size: 17pt;
+}
+.atras {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  color: white;
+  border: solid 1px;
+  border-radius: 50%;
+  text-align: center;
+}
+.atras i {
+    line-height: 30px;
+    color: white;
+    font-weight: 100;
+    font-size: 12pt;
+}
+input {
+    font-size: 12pt;
+    color: #4D4D4D;
+    border: none;
+    border-bottom: solid 1px #ccc;
+    width: 90px;
+    font-family: inherit;
+}
+input[type="time"] {
+    width: 80px;
+}

@@ -1,0 +1,68 @@
+.cuerpo {
+    background: var(--color);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+.tarjeta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 200px;
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    margin: auto;
+    width: 260px;
+    text-align: center;
+}
+.atras {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  color: white;
+  border: solid 1px;
+  border-radius: 50%;
+  text-align: center;
+}
+.atras i {
+    line-height: 30px;
+    color: white;
+    font-weight: 100;
+    font-size: 12pt;
+}
+.tarjeta span {
+    text-align: center;
+    display: block;
+    font-size: 12pt;
+    font-weight: 500;
+    color: black;
+}
+.tarjeta ul {
+    margin-top: 25px;
+    padding: 0;
+    margin-bottom: 25px;
+}
+.tarjeta ul li:before {
+    content: '- ';
+}
+.tarjeta ul li {
+    opacity: 0.7;
+    line-height: 18pt;
+    list-style: none;
+    text-align: left;
+}
+.tarjeta a {
+    color: var(--color);
+    font-weight: 700;
+    font-size: 15pt;
+    text-decoration: none;
+    margin: 0px 15px;
+    border-bottom: solid 3px;
+    padding-bottom: 3px;
+}
