@@ -39,6 +39,8 @@ error(error){
       alert("Correcto");
     }
     console.log(data);
+    
+    localStorage.setItem("User", JSON.stringify(data));
     this.conexionesService.addFinca(data.Finca);
     this.router.navigate(['/inicio']);
   }

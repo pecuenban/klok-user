@@ -1,3 +1,19 @@
-<p>
-reserva works!
-</p>Pedro
+<div class="cuerpo"><span [routerLink]="['/reservar_espacio/'+idSala]" class="atras"><i class="material-icons">keyboard_backspace</i></span>
+  <p class="titulo">Finalizar tu reserva</p>
+  <div class="tarjeta">
+    <span class="fecha">Fecha: {{fecha}}</span>
+    <span class="hora"><i class="material-icons">access_time</i> De {{hora}} a {{horaFinal}}</span>
+<p class="info">*Horario de entrada y de salida. Recuerda registrar tu llegada 
+a la entrada. Si llegas15 minutos tarde se eliminara tu reserva
+y tendrás una penalización.</p>
+<div class="personas">
+<button [disabled]="personas == 0" (click)="resta()">-</button>
+{{personas}} personas 
+  <button [disabled]="personas == max" (click)="add()">+</button>
+</div>
+<p class="info">* Se puede reservar hora para un máximo de {{personasCasa}} personas
+por apartamento.</p>
+
+<button class="enviar">Reservar</button>
+  </div>
+</div>

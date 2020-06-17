@@ -10,15 +10,6 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 })
 export class EspacioComponent implements OnInit {
 sala :any;
-formularioSala = new FormGroup({
-  Nombre : new FormControl('',Validators.required),
-  Capacidad : new FormControl('',Validators.required),
-  Tiempo : new FormControl('',Validators.required),
-  HoraIni : new FormControl('',Validators.required),
-  HoraFin : new FormControl('',Validators.required),
-  HoraIni2 : new FormControl(''),
-  HoraFin2 : new FormControl(''),
-});
 hoy = "";
 fecha = "2020-06-17";
 idEditar;
@@ -50,6 +41,7 @@ idSala = "";
     .subscribe(
       (data) => { // Success
         this.sala = data;
+        localStorage.setItem("tiempo",this.sala.Tiempo);
       },
       (error) => {
         console.error(error);
@@ -76,7 +68,11 @@ idSala = "";
     );
   }
 
-  
+  enlace(franja, libre){
+
+        localStorage.setItem("espacio",libre);
+      this.router.navigate(['/reservar/'+this.idSala +'/'+this.fecha+'/'+franja]);
+  }
 error(error){
   alert("Error editar");
   console.error(error);
