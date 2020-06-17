@@ -2,7 +2,7 @@
 <input class="calendario" [min]="hoy" type="date" [(ngModel)]="fecha" (change)="actualizar()">
 <div class="tarjeta"><h2>Horario {{sala.Nombre}}</h2>
 <ul>
-<li *ngFor="let hora of sala.Horas"><i class="material-icons">access_time</i> <span>{{hora.hora}}</span>{{hora.libre}}<a (click)="enlace(hora.hora,hora.libre)" *ngIf="hora.libre > 0">Reservar</a></li>
+<li *ngFor="let hora of sala.Horas"><i class="material-icons">access_time</i> <span>{{hora.hora}}</span><a (click)="enlace(hora.hora,hora.libre)" *ngIf="hora.libre > 0">Reservar</a><a class="completo" *ngIf="hora.libre == 0">Completo</a></li>
 </ul>
 </div>
 <div class="add_espacio" [routerLink]="['/new_espacio']"><span>Reservar ahora</span></div>

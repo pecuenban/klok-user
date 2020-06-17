@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ConexionesService } from '../conexiones.service';
 
 @Component({
   selector: 'app-reserva',
@@ -8,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ReservaComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, protected serviceConexiones: ConexionesService) { }
 idSala ="";
 horaFin = "";
 horaFinal = "";
@@ -18,6 +19,11 @@ personas = 1;
 personasCasa = 2;
 capacidad;
 max;
+reserva = {
+  "Inicio":"",
+"Usuario":"",
+"Cantidad":1
+};
   ngOnInit() {
     this.capacidad = localStorage.getItem("espacio");
     
@@ -66,5 +72,21 @@ resta(){
 }
 add(){
   this.personas++;
+}
+enviar(){
+  this.reserva.Inicio = this.fecha + " "+ this.hora;
+this.reserva.Usuario = JSON.parse(localStorage.getItem("User")).Id;
+this.reserva.Cantidad = this.personas;
+console.log(this.reserva);
+
+this.serviceConexiones.reservar(localStorage.getItem("Finca"),this.idSala,this.reserva).subscribe(
+      (data) => { // Success
+      console.log(data);
+    this.router.navigate(['/reservas']);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
 }
 }

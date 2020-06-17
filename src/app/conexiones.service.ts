@@ -35,5 +35,13 @@ export class ConexionesService {
   getHoras(finca,id,fecha){
     return this.http.get('https://us-central1-klok-reservas.cloudfunctions.net/api/horas/'+finca+"/"+id+"/"+fecha, this.httpOptions);
   }
+
+  getReservas(id){
+    return this.http.get('https://us-central1-klok-reservas.cloudfunctions.net/api/reserva/'+id, this.httpOptions);
+  }
+  
+  reservar(finca,sala,reserva){
+    return this.http.post('https://us-central1-klok-reservas.cloudfunctions.net/api/reserva/'+finca+"/"+sala, reserva,this.httpOptions);
+  }
   
 }

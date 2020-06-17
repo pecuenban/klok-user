@@ -17,6 +17,8 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 import { AutenticarComponent } from './autenticar/autenticar.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ReservaComponent } from './reserva/reserva.component';
+import { MisReservasComponent } from './mis-reservas/mis-reservas.component';
+import { FechaFirebasePipe } from './fecha-firebase.pipe';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,HttpClientModule,ReactiveFormsModule,MatIconModule,
@@ -27,9 +29,10 @@ import { ReservaComponent } from './reserva/reserva.component';
       { path: 'reservar_espacio/:id', component: EspacioComponent },
       { path: 'contacto', component: ContactoComponent },
       { path: 'reservar/:id/:fecha/:hora', component: ReservaComponent },
+      { path: 'reservas', component: MisReservasComponent },
       
     ])],
-  declarations: [ AppComponent, FincasComponent, EspaciosComponent, EspacioComponent, CabeceraComponent, AutenticarComponent, ContactoComponent, ReservaComponent ],
+  declarations: [ AppComponent, FincasComponent, EspaciosComponent, EspacioComponent, CabeceraComponent, AutenticarComponent, ContactoComponent, ReservaComponent, MisReservasComponent, FechaFirebasePipe ],
   bootstrap:    [ AppComponent ],
   providers: [ConexionesService]
 })

@@ -7,7 +7,7 @@
 }
 .tarjeta {
     position: absolute;
-    bottom: 50px;
+    bottom: 0;
     left: 0;
     right: 0;
     top: 70px;
@@ -82,7 +82,7 @@ input[type="time"] {
 }
 li {
     list-style: none;
-    font-size: 12pt;
+    font-size: 11pt;
     border-bottom: solid 2px #ddd;
     line-height: 40px;
     position: relative;
@@ -102,6 +102,7 @@ ul {
 .tarjeta li > i.material-icons {
     color: #ccc;
     font-size: 16pt;
+    margin-right: 10px;
 }
 
 .add_espacio:before {
@@ -133,14 +134,4 @@ ul {
   position: relative;
   color: white;
   font-weight: 500;
-}
-input.calendario {
-    position: fixed;
-    top: 18px;
-    left: 0;
-    margin: auto;
-    width: 150px;
-    padding: 6px 20px;
-    border-radius: 80px;
-    right: 0;
 }
