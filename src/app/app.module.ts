@@ -16,6 +16,7 @@ import { EspacioComponent } from './espacio/espacio.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { AutenticarComponent } from './autenticar/autenticar.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { ReservaComponent } from './reserva/reserva.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,HttpClientModule,ReactiveFormsModule,MatIconModule,
@@ -25,9 +26,10 @@ import { ContactoComponent } from './contacto/contacto.component';
       { path: 'espacios', component: EspaciosComponent },
       { path: 'reservar_espacio/:id', component: EspacioComponent },
       { path: 'contacto', component: ContactoComponent },
+      { path: 'reservar/:id/:fecha/:hora', component: ReservaComponent },
       
     ])],
-  declarations: [ AppComponent, FincasComponent, EspaciosComponent, EspacioComponent, CabeceraComponent, AutenticarComponent, ContactoComponent ],
+  declarations: [ AppComponent, FincasComponent, EspaciosComponent, EspacioComponent, CabeceraComponent, AutenticarComponent, ContactoComponent, ReservaComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ConexionesService]
 })

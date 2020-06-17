@@ -130,5 +130,14 @@ ul {
   position: relative;
   color: white;
   font-weight: 500;
-
+}
+input.calendario {
+    position: fixed;
+    top: 18px;
+    left: 0;
+    margin: auto;
+    width: 150px;
+    padding: 6px 20px;
+    border-radius: 80px;
+    right: 0;
 }

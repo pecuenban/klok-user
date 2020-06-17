@@ -19,19 +19,34 @@ formularioSala = new FormGroup({
   HoraIni2 : new FormControl(''),
   HoraFin2 : new FormControl(''),
 });
-editar = false;
+hoy = "";
+fecha = "2020-06-17";
 idEditar;
+idSala = "";
   constructor(protected conexionesService: ConexionesService,
     private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+    var dia;
+    var mes;
+    if(new Date().getDate() > 9){
+    dia = new Date().getDate();
+    }else{
+    dia = "0"+new Date().getDate();
+    }
+    if(parseInt(new Date().getMonth().toString()) +1 > 9){
+    mes = (parseInt(new Date().getMonth().toString() )+1);
+    }else{
+    mes = "0"+(parseInt(new Date().getMonth().toString()) +1);
+    }
+    this.hoy = new Date().getFullYear() + "-"+mes+ "-"+dia;
       this.route.paramMap.subscribe(params => {
         
         
             if (params.get("id") != null) {
-this.editar = true;
- this.conexionesService.getHoras(localStorage.getItem("Finca"), params.get("id"))
+              this.idSala = params.get("id");
+ this.conexionesService.getHoras(localStorage.getItem("Finca"), this.idSala,this.fecha)
     .subscribe(
       (data) => { // Success
         this.sala = data;
@@ -49,21 +64,16 @@ this.editar = true;
     
 
   }
-  onSubmit(){
-    var salaEnvio = this.sala;
-    salaEnvio.Tiempo = this.sala.Tiempo*2;
-    if(this.editar){
-this.conexionesService.putSala(localStorage.getItem("Finca"),salaEnvio).subscribe({
-    next: data => this.respuesta(data),//this.estado = data.status,
-    error: error => this.error(error)//this.estado = error
-    });
-    }else{
-      this.conexionesService.postSala(localStorage.getItem("Finca"),salaEnvio).subscribe({
-    next: data => this.respuesta(data),//this.estado = data.status,
-    error: error => this.error(error)//this.estado = error
-    });
-    }
-    
+  actualizar(){
+ this.conexionesService.getHoras(localStorage.getItem("Finca"), this.idSala,this.fecha)
+    .subscribe(
+      (data) => { // Success
+        this.sala = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
   
