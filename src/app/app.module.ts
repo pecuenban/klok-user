@@ -19,9 +19,10 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { MisReservasComponent } from './mis-reservas/mis-reservas.component';
 import { FechaFirebasePipe } from './fecha-firebase.pipe';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,HttpClientModule,ReactiveFormsModule,MatIconModule,
+  imports:      [ BrowserModule, FormsModule,HttpClientModule,ReactiveFormsModule,MatIconModule,ZXingScannerModule,
     RouterModule.forRoot([
       { path: '', component: AutenticarComponent },
       { path: 'inicio', component: FincasComponent },
