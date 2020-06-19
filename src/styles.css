@@ -83,3 +83,21 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+/*qr*/
+qr-scanner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+qr-scanner div video {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: -webkit-fill-available!important;
+    width: auto!important;
+}

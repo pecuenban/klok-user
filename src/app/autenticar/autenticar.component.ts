@@ -19,10 +19,9 @@ formularioRegistro = new FormGroup({
   Puerta : new FormControl('',Validators.required),
   Pass : new FormControl('',Validators.required),
 });
-  ngOnInit() {
-
-  }
-
+ ngOnInit() {
+        
+    }
  onSubmit(){
    this.conexionesService.autenticarUser(this.autenticar).subscribe({
     next: data => this.respuesta(data),//this.estado = data.status,

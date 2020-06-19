@@ -1,0 +1,13 @@
+<div class="contenedor"><app-cabecera></app-cabecera>
+<qr-scanner
+        [debug]="false"
+        [canvasWidth]="360"
+        [canvasHeight]="580"
+        [stopAfterScan]="false"
+        [updateTime]="500">
+</qr-scanner>
+{{escaneo}}
+<span class="encuadre"></span>
+<span class="encuadre2"></span>
+<div class="add_espacio" [routerLink]="['/inicio']"><span>Volver al menú</span></div>
+</div>

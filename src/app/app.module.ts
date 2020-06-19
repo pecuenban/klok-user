@@ -19,10 +19,11 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { MisReservasComponent } from './mis-reservas/mis-reservas.component';
 import { FechaFirebasePipe } from './fecha-firebase.pipe';
-import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { NgQrScannerModule } from 'angular2-qrscanner';
+import { ScanComponent } from './scan/scan.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,HttpClientModule,ReactiveFormsModule,MatIconModule,ZXingScannerModule,
+  imports:      [ BrowserModule, FormsModule,HttpClientModule,ReactiveFormsModule,MatIconModule,NgQrScannerModule,
     RouterModule.forRoot([
       { path: '', component: AutenticarComponent },
       { path: 'inicio', component: FincasComponent },
@@ -31,9 +32,10 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
       { path: 'contacto', component: ContactoComponent },
       { path: 'reservar/:id/:fecha/:hora', component: ReservaComponent },
       { path: 'reservas', component: MisReservasComponent },
+      { path: 'scan', component: ScanComponent },
       
     ])],
-  declarations: [ AppComponent, FincasComponent, EspaciosComponent, EspacioComponent, CabeceraComponent, AutenticarComponent, ContactoComponent, ReservaComponent, MisReservasComponent, FechaFirebasePipe ],
+  declarations: [ AppComponent, FincasComponent, EspaciosComponent, EspacioComponent, CabeceraComponent, AutenticarComponent, ContactoComponent, ReservaComponent, MisReservasComponent, FechaFirebasePipe, ScanComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ConexionesService]
 })
