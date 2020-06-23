@@ -70,7 +70,7 @@ this.mostrarMensaje = false;
 {
     this.router.navigate(['/inicio']);
 },
-3000);
+300);
 },
 3000);
       }else{
@@ -83,12 +83,12 @@ this.mostrarMensaje = false;
 {
     this.router.navigate(['/inicio']);
 },
-3000);
+300);
 },
 3000);
       }
 
-      this.analizando = false;
+     // this.analizando = false;
       },
       (error) => {
         this.mostrarMensaje = true;
@@ -96,15 +96,8 @@ this.mostrarMensaje = false;
          setTimeout(() =>
 {
 this.mostrarMensaje = false;
- setTimeout(() =>
-{
-    this.router.navigate(['/inicio']);
 },
 3000);
-},
-3000);
-        console.error("error");
-        this.mensaje = error;
         this.analizando = false;
       }
     );
