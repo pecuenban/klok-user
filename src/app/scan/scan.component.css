@@ -109,7 +109,7 @@ span.encuadre2:after {
 
 .mensaje{
   position: fixed;
-  top: 50%;
+  top: 25%;
   z-index: 9999;
   color:red;
 }
