@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {QrScannerComponent} from 'angular2-qrscanner';
+import { ConexionesService } from '../conexiones.service';
 
 @Component({
   selector: 'app-scan',
@@ -9,11 +10,17 @@ import {QrScannerComponent} from 'angular2-qrscanner';
 export class ScanComponent implements OnInit {
     @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent ;
 
-  constructor() { }
-
+  constructor(protected serviceConexiones: ConexionesService) { }
+user ={
+  "Usuario": JSON.parse(localStorage.getItem("User")).Id
+}
   ngOnInit() {
   }
+  mensaje:any = {
+    "Pedro":""
+  };
 escaneo = "";
+analizando = false;
 ngAfterViewInit():void{
 this.qrScannerComponent.getMediaDevices().then(devices => {
             console.log(devices);
@@ -43,10 +50,27 @@ this.qrScannerComponent.getMediaDevices().then(devices => {
                 }
             }
         }); 
+        if(!this.analizando){
         this.qrScannerComponent.capturedQr.subscribe(result => {
             console.log(result);
-            alert("Escaneado");
             this.escaneo = result;
+            this.analizando = true;
+this.serviceConexiones.check(this.escaneo,this.user).subscribe(
+      (data) => { // Success
+      console.log(data);
+      alert("bien");
+      this.analizando = false;
+      this.mensaje = data;
+      },
+      (error) => {
+        alert("error");
+        console.error("error");
+        this.analizando = false;
+        this.mensaje = error;
+      }
+    );
+            
         });
+        }
 }
 }

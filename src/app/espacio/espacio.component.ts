@@ -11,7 +11,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 export class EspacioComponent implements OnInit {
 sala :any;
 hoy = "";
-fecha = "2020-06-17";
+fecha = "";
 idEditar;
 idSala = "";
   constructor(protected conexionesService: ConexionesService,
@@ -32,6 +32,7 @@ idSala = "";
     mes = "0"+(parseInt(new Date().getMonth().toString()) +1);
     }
     this.hoy = new Date().getFullYear() + "-"+mes+ "-"+dia;
+    this.fecha = new Date().getFullYear() + "-"+mes+ "-"+dia;
       this.route.paramMap.subscribe(params => {
         
         

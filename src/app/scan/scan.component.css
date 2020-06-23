@@ -106,3 +106,10 @@ span.encuadre2:after {
     color:white;
     border-width:4px;
 }
+
+.mensaje{
+  position: fixed;
+  top: 50%;
+  z-index: 9999;
+  color:red;
+}
