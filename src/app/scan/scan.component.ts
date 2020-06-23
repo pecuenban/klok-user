@@ -12,7 +12,7 @@ export class ScanComponent implements OnInit {
 
   constructor(protected serviceConexiones: ConexionesService) { }
 user ={
-  "Usuario": "1G2Y0AQXLbPC7tZZ2cLH"
+  "Usuario": JSON.parse(localStorage.getItem("User")).Id
 }
   ngOnInit() {
   }
