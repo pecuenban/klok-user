@@ -38,6 +38,8 @@ finca;
 
   }
 
-
+eliminar(){
+  
+}
 
 }

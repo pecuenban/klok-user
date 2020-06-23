@@ -48,6 +48,9 @@ export class ConexionesService {
     return this.http.put('https://us-central1-klok-reservas.cloudfunctions.net/api/check/'+qr,user,this.httpOptions);
   }
 
+ elimiarReserva(id,user):Observable<any>{
+    return this.http.put('https://us-central1-klok-reservas.cloudfunctions.net/api/eliminar/'+id,user,this.httpOptions);
+  }
 
   
 }
