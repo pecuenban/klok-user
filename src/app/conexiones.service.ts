@@ -44,7 +44,7 @@ export class ConexionesService {
     return this.http.post('https://us-central1-klok-reservas.cloudfunctions.net/api/reserva/'+finca+"/"+sala, reserva,this.httpOptions);
   }
   
-  check(qr,user){
+  check(qr,user):Observable<any>{
     return this.http.put('https://us-central1-klok-reservas.cloudfunctions.net/api/check/'+qr,user,this.httpOptions);
   }
 

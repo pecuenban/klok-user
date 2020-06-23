@@ -108,8 +108,21 @@ span.encuadre2:after {
 }
 
 .mensaje{
-  position: fixed;
-  top: 25%;
-  z-index: 9999;
-  color:red;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 280px;
+    height: 75px;
+    padding: 25px;
+    background: white;
+    z-index: 9999;
+    text-align: center;
+    color: black;
+    margin: auto;
+    border-radius: 10px;
+    line-height: 37px;
+    font-size: 20pt;
+    font-weight: 500;
 }

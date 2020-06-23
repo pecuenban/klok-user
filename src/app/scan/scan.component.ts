@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {QrScannerComponent} from 'angular2-qrscanner';
 import { ConexionesService } from '../conexiones.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-scan',
@@ -10,15 +11,15 @@ import { ConexionesService } from '../conexiones.service';
 export class ScanComponent implements OnInit {
     @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent ;
 
-  constructor(protected serviceConexiones: ConexionesService) { }
+  constructor(protected serviceConexiones: ConexionesService,private router: Router, private route: ActivatedRoute) { }
 user ={
   "Usuario": JSON.parse(localStorage.getItem("User")).Id
 }
   ngOnInit() {
+    
   }
-  mensaje:any = {
-    "Pedro":""
-  };
+  mensaje ="";
+  mostrarMensaje = false;
 escaneo = "";
 analizando = false;
 ngAfterViewInit():void{
@@ -58,12 +59,50 @@ this.qrScannerComponent.getMediaDevices().then(devices => {
 this.serviceConexiones.check(this.escaneo,this.user).subscribe(
       (data) => { // Success
       console.log(data);
-      alert("bien");
-      this.mensaje = data;
+      var respuesta = data;
+      if(respuesta.Estado == 1){
+        this.mostrarMensaje = true;
+        this.mensaje = "Tu reserva termina a las " + respuesta.Fin;
+        setTimeout(() =>
+{
+this.mostrarMensaje = false;
+ setTimeout(() =>
+{
+    this.router.navigate(['/inicio']);
+},
+3000);
+},
+3000);
+      }else{
+        this.mostrarMensaje = true;
+        this.mensaje = "Reserva finalizada";
+         setTimeout(() =>
+{
+this.mostrarMensaje = false;
+ setTimeout(() =>
+{
+    this.router.navigate(['/inicio']);
+},
+3000);
+},
+3000);
+      }
+
       this.analizando = false;
       },
       (error) => {
-        alert("error");
+        this.mostrarMensaje = true;
+        this.mensaje = "No tienes reserva para ahora";
+         setTimeout(() =>
+{
+this.mostrarMensaje = false;
+ setTimeout(() =>
+{
+    this.router.navigate(['/inicio']);
+},
+3000);
+},
+3000);
         console.error("error");
         this.mensaje = error;
         this.analizando = false;
@@ -73,4 +112,6 @@ this.serviceConexiones.check(this.escaneo,this.user).subscribe(
         }
         });
 }
+
+
 }
