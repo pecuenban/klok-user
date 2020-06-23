@@ -50,8 +50,8 @@ this.qrScannerComponent.getMediaDevices().then(devices => {
                 }
             }
         }); 
-        if(!this.analizando){
         this.qrScannerComponent.capturedQr.subscribe(result => {
+        if(!this.analizando){
             console.log(result);
             this.escaneo = result;
             this.analizando = true;
@@ -59,18 +59,18 @@ this.serviceConexiones.check(this.escaneo,this.user).subscribe(
       (data) => { // Success
       console.log(data);
       alert("bien");
-      this.analizando = false;
       this.mensaje = data;
+      this.analizando = false;
       },
       (error) => {
         alert("error");
         console.error("error");
-        this.analizando = false;
         this.mensaje = error;
+        this.analizando = false;
       }
     );
             
-        });
         }
+        });
 }
 }
