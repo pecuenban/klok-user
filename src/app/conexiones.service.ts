@@ -36,7 +36,7 @@ export class ConexionesService {
     return this.http.get('https://us-central1-klok-reservas.cloudfunctions.net/api/horas/'+finca+"/"+id+"/"+fecha, this.httpOptions);
   }
 
-  getReservas(id){
+  getReservas(id):Observable<any>{
     return this.http.get('https://us-central1-klok-reservas.cloudfunctions.net/api/reserva/'+id, this.httpOptions);
   }
   
@@ -49,7 +49,7 @@ export class ConexionesService {
   }
 
  elimiarReserva(id,user):Observable<any>{
-    return this.http.put('https://us-central1-klok-reservas.cloudfunctions.net/api/eliminar/'+id,user,this.httpOptions);
+    return this.http.delete('https://us-central1-klok-reservas.cloudfunctions.net/api/eliminar/'+id+"/"+user,this.httpOptions);
   }
 
   

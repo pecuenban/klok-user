@@ -9,7 +9,7 @@ import { ConexionesService } from '../conexiones.service';
 export class MisReservasComponent implements OnInit {
 
   constructor(protected conexionesService: ConexionesService) { }
-reserva;
+reserva:any;
 finca;
   ngOnInit() {
     
@@ -38,8 +38,25 @@ finca;
 
   }
 
-eliminar(){
+eliminar(id){
   
+   this.conexionesService.elimiarReserva(id,JSON.parse(localStorage.getItem("User")).Id)
+    .subscribe(
+      (data) => { // Success
+      //  this.finca = data;
+        console.log(data)
+        if(data.msg == "ok"){
+          for(var i = 0; i < this.reserva.length;i++){
+            if(this.reserva[i].Id == id){
+              this.reserva.splice(i,1);
+            }
+          }
+        }
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
 }
 
 }
