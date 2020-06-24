@@ -9,7 +9,10 @@ import { ConexionesService } from '../conexiones.service';
 export class FincasComponent implements OnInit {
 
   finca;
-  
+  verMenu=false;
+   menu(){
+    this.verMenu = !this.verMenu;
+  }
   constructor(protected conexionesService: ConexionesService) { }
 
  

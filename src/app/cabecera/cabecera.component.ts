@@ -7,10 +7,13 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent implements OnInit {
-
+verMenu = false;
   constructor() { }
 
   ngOnInit() {
+  }
+  menu(){
+    this.verMenu = !this.verMenu;
   }
 
 }

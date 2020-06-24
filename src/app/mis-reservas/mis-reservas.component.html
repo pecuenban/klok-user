@@ -1,4 +1,4 @@
-<div class="cuerpo"><span [routerLink]="['/inicio']" class="atras"><i class="material-icons">keyboard_backspace</i></span>
+<div class="cuerpo"><app-cabecera></app-cabecera>
 <div class="tarjeta"><h2>Mis reservas</h2>
 <ul>
 <li *ngFor="let hora of reserva"><i class="material-icons">access_time</i>{{hora.Inicio._seconds | fechaFirebase}} {{finca.Salas[hora.Sala].Nombre}} (X{{hora.Cantidad}})<i (click)="eliminar(hora.Id)"class="material-icons">delete</i><!--<span>{{hora.hora}}</span><a (click)="enlace(hora.hora,hora.libre)" *ngIf="hora.libre > 0">Reservar</a><a class="completo" *ngIf="hora.libre == 0">Completo</a>--></li>

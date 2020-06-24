@@ -1,5 +1,16 @@
 <div class="cuerpo">
   <div class="cabecera">¡Bienvenido a <b>Klok</b>!</div><div class="contenedor">
+    <div class="menu" (click)="menu()"><i class="material-icons">menu</i></div>
+
+<div class="menuMostrar"  *ngIf="verMenu">
+   <i class="material-icons atras" (click)="menu()">keyboard_backspace</i>
+<span class="titulo">Mi cuenta</span>
+<ul>
+<li [routerLink]="['/reservas']">Mis reservas</li>
+<li [routerLink]="['/']">Salir</li>
+</ul>
+
+</div>
     
     <p class="info">Empieza eligiendo dónde quieres reservar</p>
     <div class="centrado">

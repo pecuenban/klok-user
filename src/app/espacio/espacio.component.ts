@@ -14,6 +14,10 @@ hoy = "";
 fecha = "";
 idEditar;
 idSala = "";
+  verMenu=false;
+   menu(){
+    this.verMenu = !this.verMenu;
+  }
   constructor(protected conexionesService: ConexionesService,
     private router: Router,
     private route: ActivatedRoute) { }
