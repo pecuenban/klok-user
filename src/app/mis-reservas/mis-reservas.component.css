@@ -30,25 +30,6 @@
 .tarjeta span:nth-child(4) {
     border-bottom: none;
 }
-button i {
-    color: white;
-    font-size: 11pt!important;
-}
-button{
-    position: absolute;
-    left: 15px;
-    right: 15px;
-    bottom: 20px;
-    margin: auto;
-    width: calc(100% - 30px);
-    height: 50px;
-    border: none;
-    background: var(--color);
-    color: white;
-    border-radius: 5px;
-    font-size: 13pt;
-    font-weight: 500;
-}
 .tarjeta div {
     line-height: 45pt;
 }
@@ -134,4 +115,69 @@ ul {
   position: relative;
   color: white;
   font-weight: 500;
+}
+
+.popup:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: -1;
+    opacity: 0.5;
+}
+.popup > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 250px;
+    height: 270px;
+    padding: 25px;
+    background: white;
+    margin: auto;
+    border-radius: 15px;
+}
+.popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.popup .titulo {
+    font-size: 20pt;
+    text-align: center;
+    font-weight: 600;
+    color: var(--color);
+}
+.popup p {
+    font-size: 16pt;
+    text-align: center;
+    width: 180px;
+    margin: auto;
+    margin-top: 20px;
+}
+.botones {
+    margin-top: 35px;
+}
+.botones button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 15pt;
+    font-weight: 500;
+    background: var(--color);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-top: 15px;
+}
+.botones button:first-child {
+    border: solid 3px;
+    background: transparent;
+    color: var(--color);
 }

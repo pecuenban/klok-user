@@ -94,7 +94,30 @@ span.icono {
     left: 25px;
     right: 25px;
     bottom: 35px;
-    background: var(--color);
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
+    background-position: center!important;
+}
+span.icono.i_0 {
+    background: url(https://firebasestorage.googleapis.com/v0/b/klok-reservas.appspot.com/o/6.png?alt=media);
+}
+span.icono.i_1 {
+    background: url(https://firebasestorage.googleapis.com/v0/b/klok-reservas.appspot.com/o/1.png?alt=media);
+}
+span.icono.i_2 {
+    background: url(https://firebasestorage.googleapis.com/v0/b/klok-reservas.appspot.com/o/2.png?alt=media);
+}
+span.icono.i_3 {
+    background: url(https://firebasestorage.googleapis.com/v0/b/klok-reservas.appspot.com/o/3.png?alt=media);
+}
+span.icono.i_4 {
+    background: url(https://firebasestorage.googleapis.com/v0/b/klok-reservas.appspot.com/o/4.png?alt=media);
+}
+span.icono.i_5 {
+    background: url(https://firebasestorage.googleapis.com/v0/b/klok-reservas.appspot.com/o/5.png?alt=media);
+}
+span.icono.i_6 {
+    background: url(https://firebasestorage.googleapis.com/v0/b/klok-reservas.appspot.com/o/6.png?alt=media);
 }
 
 .centrado > *:nth-child(4n+1) {
@@ -162,11 +185,16 @@ width: 30px;
 
 .menuMostrar ul {
     margin-top: 40px;
+    padding: 0;
 }
 .menuMostrar li {
     list-style: none;
-    line-height: 30pt;
+    line-height: 40pt;
     font-size: 15pt;
+    border-bottom: solid 1px #ddd;
+}
+.menuMostrar li:last-child{
+  border-bottom: none;
 }
 .menuMostrar span {
     font-weight: 500;
@@ -182,7 +210,7 @@ width: 30px;
     right: 0;
     z-index: 99;
     top: 0;
-    background: white;
+    background: var(--color);
     padding: 25px;
 }
 .menuMostrar .atras{
@@ -192,7 +220,16 @@ width: 30px;
     font-size: 13pt;
     text-align: center;
 }
-
+.tarjetaMenu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 90px;
+    background: white;
+    border-radius: 15px 15px 0px 0px;
+    padding: 25px;
+}
 
 .atras {
     width: 30px;
@@ -208,6 +245,10 @@ width: 30px;
     font-size: 12pt;
 }
 .menuMostrar .atras{
-    color: var(--color);
+    color: white;
     text-align: center;
+}
+.menuMostrar ul li i {
+    vertical-align: middle;
+    margin-right: 5px;
 }

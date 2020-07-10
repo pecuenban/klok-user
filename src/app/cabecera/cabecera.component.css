@@ -38,11 +38,16 @@
 
 .menuMostrar ul {
     margin-top: 40px;
+    padding: 0;
 }
 .menuMostrar li {
     list-style: none;
-    line-height: 30pt;
+    line-height: 40pt;
     font-size: 15pt;
+    border-bottom: solid 1px #ddd;
+}
+.menuMostrar li:last-child{
+  border-bottom: none;
 }
 .menuMostrar span {
     font-weight: 500;
@@ -58,13 +63,28 @@
     right: 0;
     z-index: 99;
     top: 0;
-    background: white;
+    background: var(--color);
     padding: 25px;
 }
 .menuMostrar .atras{
-    color: var(--color);
+    color: white;
     font-weight: 300;
     line-height: 30px;
     font-size: 13pt;
     text-align: center;
+}
+
+.tarjetaMenu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 90px;
+    background: white;
+    border-radius: 15px 15px 0px 0px;
+    padding: 25px;
+}
+.menuMostrar ul li i {
+    vertical-align: middle;
+    margin-right: 5px;
 }

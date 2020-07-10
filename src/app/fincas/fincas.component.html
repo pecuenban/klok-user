@@ -4,11 +4,12 @@
 
 <div class="menuMostrar"  *ngIf="verMenu">
    <i class="material-icons atras" (click)="menu()">keyboard_backspace</i>
-<span class="titulo">Mi cuenta</span>
+<div class="tarjetaMenu"><span class="titulo">Mi cuenta</span>
 <ul>
-<li [routerLink]="['/reservas']">Mis reservas</li>
-<li [routerLink]="['/']">Salir</li>
+<li [routerLink]="['/reservas']"><i class="material-icons">schedule</i> Mis reservas</li>
+<li [routerLink]="['/']"><i class="material-icons">power_settings_new</i> Salir</li>
 </ul>
+</div>
 
 </div>
     
@@ -18,7 +19,7 @@
   <ng-container *ngFor="let sala of finca.Salas; let i = index">
 <div *ngIf="sala.Activa" [routerLink]="['/reservar_espacio/'+i]">
   <label class="nombre">{{sala.Nombre}}</label>
-  <span class="icono"></span>
+  <span [className]="'icono i_' + sala.Tipo"></span>
 </div>
   </ng-container>
     </div>
