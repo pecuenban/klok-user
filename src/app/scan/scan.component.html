@@ -10,4 +10,15 @@
 <span class="encuadre2"></span>
 <div class="mensaje" *ngIf="mostrarMensaje">{{mensaje}}</div>
 <div class="add_espacio" [routerLink]="['/inicio']"><span>Volver al menú</span></div>
+
+<div class="popup" *ngIf="popUp">
+  <div>
+    <div class="titulo">Entrada</div>
+    <p>¿Qué deseas hacer?</p>
+    <div class="botones">
+      <button (click)="salir()">Salir</button>
+      <button (click)="entrar()">Entrar</button>
+    </div>
+  </div>
+</div>
 </div>

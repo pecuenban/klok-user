@@ -18,6 +18,7 @@ user ={
   ngOnInit() {
     
   }
+  popUp = false;
   mensaje ="";
   mostrarMensaje = false;
 escaneo = "";
@@ -55,12 +56,21 @@ this.qrScannerComponent.getMediaDevices().then(devices => {
         if(!this.analizando){
             console.log(result);
             this.escaneo = result;
+            this.popUp = true;
             this.analizando = true;
-this.serviceConexiones.check(this.escaneo,this.user).subscribe(
+
+            
+        }
+        });
+}
+
+
+entrar(){
+            this.popUp = false;
+  this.serviceConexiones.check(this.escaneo,this.user).subscribe(
       (data) => { // Success
       console.log(data);
       var respuesta = data;
-      if(respuesta.Estado == 1){
         this.mostrarMensaje = true;
         this.mensaje = "Tu reserva termina a las " + respuesta.Fin;
         setTimeout(() =>
@@ -73,7 +83,28 @@ this.mostrarMensaje = false;
 300);
 },
 3000);
-      }else{
+     // this.analizando = false;
+      },
+      (error) => {
+        this.mostrarMensaje = true;
+        this.mensaje = error.error.msg;
+         setTimeout(() =>
+{
+this.mostrarMensaje = false;
+},
+3000);
+        this.analizando = false;
+      }
+    );
+}
+
+
+salir(){
+            this.popUp = false;
+  this.serviceConexiones.checkFin(this.escaneo,this.user).subscribe(
+      (data) => { // Success
+      console.log(data);
+      var respuesta = data;
         this.mostrarMensaje = true;
         this.mensaje = "Reserva finalizada";
          setTimeout(() =>
@@ -86,13 +117,11 @@ this.mostrarMensaje = false;
 300);
 },
 3000);
-      }
-
      // this.analizando = false;
       },
       (error) => {
         this.mostrarMensaje = true;
-        this.mensaje = "No tienes reserva para ahora";
+        this.mensaje = error.error.msg;
          setTimeout(() =>
 {
 this.mostrarMensaje = false;
@@ -101,10 +130,6 @@ this.mostrarMensaje = false;
         this.analizando = false;
       }
     );
-            
-        }
-        });
 }
-
 
 }

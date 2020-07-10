@@ -43,6 +43,9 @@ export class ConexionesService {
   reservar(finca,sala,reserva){
     return this.http.post('https://europe-west2-klok-reservas.cloudfunctions.net/api/reserva/'+finca+"/"+sala, reserva,this.httpOptions);
   }
+  checkFin(qr,user){
+    return this.http.put('https://europe-west2-klok-reservas.cloudfunctions.net/api/checkFin/'+qr,user,this.httpOptions);
+  }
   
   check(qr,user):Observable<any>{
     return this.http.put('https://europe-west2-klok-reservas.cloudfunctions.net/api/check/'+qr,user,this.httpOptions);

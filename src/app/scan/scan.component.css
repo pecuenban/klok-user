@@ -126,3 +126,68 @@ span.encuadre2:after {
     font-size: 20pt;
     font-weight: 500;
 }
+
+.popup:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: -1;
+    opacity: 0.5;
+}
+.popup > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    padding: 25px;
+    background: white;
+    margin: auto;
+    border-radius: 15px;
+}
+.popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.popup .titulo {
+    font-size: 20pt;
+    text-align: center;
+    font-weight: 600;
+    color: var(--color);
+}
+.popup p {
+    font-size: 16pt;
+    text-align: center;
+    width: 220px;
+    margin: auto;
+    margin-top: 20px;
+}
+.botones {
+    margin-top: 35px;
+}
+.botones button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 15pt;
+    font-weight: 500;
+    background: var(--color);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-top: 15px;
+}
+.botones button:first-child {
+    border: solid 3px;
+    background: transparent;
+    color: var(--color);
+}
